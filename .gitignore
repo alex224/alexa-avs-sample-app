@@ -1,2 +1,5 @@
 .DS_Store
-samples/javaclient/target/
+samples/javaclient/target/**
+samples/companionService/refresh_tokens
+samples/javaclient/logs/*
+samples/wakeWordAgent/**/*.cpp.o
