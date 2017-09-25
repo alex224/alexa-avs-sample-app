@@ -17,6 +17,7 @@ public class MirrorConnectionService {
         try {
             final SslContextFactory sslContextFactory = new SslContextFactory();
             HttpClient httpClient = new HttpClient(sslContextFactory);
+            httpClient.setRequestBufferSize(100*1024); //100kb
             httpClient.start();
             final ContentResponse contentResponse = httpClient.newRequest(URL).method(HttpMethod.POST)
                     .param("card", payload)
