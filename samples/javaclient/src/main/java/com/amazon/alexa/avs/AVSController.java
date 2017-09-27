@@ -246,6 +246,7 @@ public class AVSController implements RecordingStateListener, AlertHandler, Aler
     private void initializeMicrophone() {
 
         if (this.wakeWordAgentEnabled) {
+        	log.info("Wakeword agent enabled.");
             AVSController controller = this;
             Callable<Void> task = new Callable<Void>() {
                 @Override
@@ -273,6 +274,7 @@ public class AVSController implements RecordingStateListener, AlertHandler, Aler
         // if either the wake-word agent is not configured for this platform, or we were not
         // able to connect to it, let's get the microphone directly
         if (microphone == null) {
+        	log.info("Microphone is null. Try to open it directly.");
             try {
                 getMicrophone(this);
             } catch (LineUnavailableException e) {
